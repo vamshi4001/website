@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>AltCoins for India</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="resources/css/styles.css">
+</head>
+<body ng-app="firstApp">	
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#/vamshi">AltCoin India</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li id="home" class="active"><a href="#/home">Home</a></li>
+              <!-- <li id="about"><a href="#/about">About</a></li>
+              <li id="contact"><a href="#/contact">Contact</a></li> -->
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+      </nav>
+  	<div ui-view>
+  		
+  	</div>
+  	<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+  	<script src="https://code.angularjs.org/1.4.8/angular.min.js" type="text/javascript"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  	<script src="resources/js/angular-ui-router.js"></script>
+  	<script src="resources/js/angular-block-ui.js"></script>
+
+    <script src="app.js"></script>
+    <script src="routes.js"></script>
+
+    <script src="controllers/homeController.js"></script>
+    <script src="controllers/aboutController.js"></script>
+    <script src="controllers/contactController.js"></script>
+    <script src="services/userService.js"></script> 
+    <script src="factory/utilitiesFactory.js"></script>
+    <script src="directives/numpad.js"></script>
+</body>
+</html>

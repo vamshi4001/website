@@ -1,0 +1,20 @@
+<div class="jumbotron">
+  <div class="container">
+    <div class="row">
+      <ul class="list-group row" id="contact-list">
+          <li class="list-group-item col-xs-6 col-sm-4 col-md-3 col-lg-3" ng-repeat="coin in coinlist"  ng-if="prices[coin.Name]">
+              <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                  <img src="{{BaseImageUrl}}{{coin.ImageUrl}}?width=200" alt="{{coin.FullName}}" class="img-responsive img-circle" />
+              </div>
+              <div class="col-xs-9 col-sm-9 col-lg-9 col-lg-9">
+                  <span class="name">{{coin.FullName}}</span><br/>
+                  <span class="usdprice">${{prices[coin.Name]["USD"]}}</span>
+                  <span class="inrprice">Rs.{{(prices[coin.Name]["USD"]*conversion["INR"]).toFixed(2)}}</span>
+              </div>
+              <div class="clearfix"></div>
+          </li>
+      </ul>      
+    </div>        
+    <span class="pull-right small">@developed by <a href="http://vamshi.mycollect.in">Vamshi</a>; Information from <a href="cryptocompare.com">cryptocompare.com</a></span>
+  </div>
+</div>
