@@ -10,10 +10,13 @@
                   <span class="name">{{coin.FullName}}</span><br/>
                   <span class="usdprice">${{prices[coin.Name]["USD"]}}</span>
                   <span class="inrprice">Rs.{{(prices[coin.Name]["USD"]*conversion["INR"]).toFixed(2)}}</span>
+                  <div><input type="text" name="" id="" ng-model="coin.quantity"></div>
               </div>
               <div class="clearfix"></div>
           </li>
-      </ul>      
+      </ul>   
+
+      <div>Complete Total: ${{completeTotal}}</div>   
     </div>        
     <span class="pull-right small">@developed by <a href="http://vamshi.mycollect.in">Vamshi</a>; Information from <a href="cryptocompare.com">cryptocompare.com</a></span>
   </div>
