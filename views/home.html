@@ -1,5 +1,7 @@
-<div class="jumbotron">
   <div class="container">
+    <div class="row text-center">
+      <h2>Find how much you can buy for Rs.10,000</h2>
+    </div>
     <div class="row">
       <ul class="list-group row" id="contact-list">
           <li class="list-group-item col-xs-6 col-sm-4 col-md-3 col-lg-3" ng-repeat="coin in coinlist"  ng-if="prices[coin.Name]">
@@ -18,7 +20,12 @@
 
       <div>Complete Total: ${{completeTotalUSD}}</div>   
       <div>Complete Total: Rs.{{completeTotalINR}}</div>   
+      <ul class="summary" ng-if="completeTotalUSD>0">
+        <li class="summarylist" ng-repeat="coin in coinlist" ng-if="coin.quantity>0">
+          <span class="qty">{{coin.quantity}}</span>
+          <span class="currency">{{coin.FullName}}</span>
+        </li>
+      </ul>      
     </div>        
-    <span class="pull-right small">@developed by <a href="http://vamshi.mycollect.in">Vamshi</a>; Information from <a href="cryptocompare.com">cryptocompare.com</a></span>
+    <span class="pull-right small">@developed by <a href="https://linkedin.com/in/vamshi4001">Vamshi</a> Information from <a href="cryptocompare.com">cryptocompare.com</a></span>
   </div>
-</div>

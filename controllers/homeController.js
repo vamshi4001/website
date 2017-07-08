@@ -17,7 +17,8 @@ angular.module("firstApp")
 				if($scope.coinlist[i] && $scope.prices[$scope.coinlist[i].Name]){
 					$scope.completeTotalUSD += Math.round(parseFloat($scope.coinlist[i].quantity?$scope.coinlist[i].quantity:0)*$scope.prices[$scope.coinlist[i].Name]["USD"]*100)/100;
 					$scope.completeTotalINR += Math.round(parseFloat($scope.coinlist[i].quantity?$scope.coinlist[i].quantity:0)*$scope.prices[$scope.coinlist[i].Name]["USD"]*$scope.conversion["INR"]*100)/100;
-
+					$scope.completeTotalUSD = Math.round($scope.completeTotalUSD*100)/100
+					$scope.completeTotalINR = Math.round($scope.completeTotalINR*100)/100
 				}				
 			}
 		}

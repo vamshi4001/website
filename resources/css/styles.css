@@ -116,3 +116,40 @@ ul.c-controls li a:hover {
   font-size: 12px;
   margin-top: 5px;
 }
+span.qty {
+    background: darkturquoise;
+    padding: 4px;
+    color: white;
+}
+li.summarylist {
+    background: black;
+    display: inline;
+    margin: 5px;
+    padding: 4px;
+    border-radius: 4px;
+    color: white;
+}
+.jumbotron{
+  background-color: #862b2b;
+}
+body{
+  color: white;
+}
+#contact-list{
+  color: black;
+}
+.summary{
+  margin-left: -45px;
+  margin-top: 5px;
+}
+.small a{
+  color: black;
+}
+.navbar-default .navbar-brand{
+  color: white
+}
+.navbar-default{
+  background-color: #862b2b;
+  border-color: #862b2b;
+  border-radius: 0px;
+}
