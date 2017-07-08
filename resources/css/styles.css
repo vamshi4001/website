@@ -109,3 +109,10 @@ ul.c-controls li a:hover {
 .navbar{
   margin-bottom: 0px;
 }
+.form-control.quantity{
+  width: 47%;
+  display: inline-block;
+  height: 23px;
+  font-size: 12px;
+  margin-top: 5px;
+}
