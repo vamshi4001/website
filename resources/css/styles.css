@@ -153,3 +153,10 @@ body{
   border-color: #862b2b;
   border-radius: 0px;
 }
+.navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:hover{
+  color: white;
+}
+.smalltxt{
+  font-size: 12px;
+  color: bisque;
+}
