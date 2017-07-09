@@ -1,6 +1,6 @@
   <div class="container">
     <div class="row text-center">
-      <h2>Find how much you can buy for Rs.10,000</h2>
+      <h2>Find how much you can buy for Rs.X</h2>
     </div>
     <div class="row">
       <ul class="list-group row" id="contact-list">
@@ -10,16 +10,15 @@
               </div>
               <div class="col-xs-9 col-sm-9 col-lg-9 col-lg-9">
                   <span class="name">{{coin.FullName}}</span><br/>
-                  <span class="usdprice">${{prices[coin.Name]["USD"]}}</span>
-                  <span class="inrprice">Rs.{{(prices[coin.Name]["USD"]*conversion["INR"]).toFixed(2)}}</span>
+                  <span class="usdprice">{{prices[coin.Name]["USD"] | currency:"USD"}}</span>
+                  <span class="inrprice">{{(prices[coin.Name]["USD"]*conversion["INR"]).toFixed(2) | currency:"INR"}}</span>
                   <div><input type="text" name="" id="" ng-model="coin.quantity" ng-change="updateCost()" placeholder="Quantity" class="quantity form-control input-xs" /></div>
               </div>
               <div class="clearfix"></div>
           </li>
       </ul>   
 
-      <div>Complete Total: ${{completeTotalUSD}}</div>   
-      <div>Complete Total: Rs.{{completeTotalINR}}</div>   
+      <div>Total : {{completeTotalUSD | currency:"USD"}} : Rs.{{completeTotalINR | currency:"INR"}}</div>   
       <ul class="summary" ng-if="completeTotalUSD>0">
         <li class="summarylist" ng-repeat="coin in coinlist" ng-if="coin.quantity>0">
           <span class="qty">{{coin.quantity}}</span>
@@ -27,5 +26,5 @@
         </li>
       </ul>      
     </div>        
-    <span class="pull-right small">@developed by <a href="https://linkedin.com/in/vamshi4001">Vamshi</a> Information from <a href="cryptocompare.com">cryptocompare.com</a></span>
+    <span class="pull-right small">Developed by <a href="https://linkedin.com/in/vamshi4001">Vamshi</a> <br>Information from <a href="cryptocompare.com">cryptocompare.com</a></span>
   </div>
