@@ -1,4 +1,4 @@
-@import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
 
 .panel > .list-group .list-group-item:first-child {
     /*border-top: 1px solid rgb(204, 204, 204);*/
@@ -154,11 +154,27 @@ body{
   background-color: #24323a;
   border-color: #24323a;
   border-radius: 0px;
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  z-index: 100000;
 }
 .navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:hover{
   color: white;
 }
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover{
+  color: #CCC;
+}
 .smalltxt{
   font-size: 12px;
   color: #82dc86;
+}
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover{
+  color: #FFF;
+  background-color: transparent;
+  border-bottom: 1px solid #82dc86;
+}
+.container{
+  margin-top: 80px;
 }

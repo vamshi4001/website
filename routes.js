@@ -2,7 +2,7 @@ angular.module("firstApp")
 	.config(function ($stateProvider, $urlRouterProvider) {
         $stateProvider
           .state('home', {
-            url: '/home',
+            url: '/',
             templateUrl: 'views/home.html',
             controller: 'homeController'
           })

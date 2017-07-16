@@ -22,29 +22,31 @@ angular.module("firstApp")
 				}				
 			}
 		}
-		$http.get($scope.url).then(function(response){
-			if(response.data.Response=="Success"){
-				$scope.BaseImageUrl = response.data.BaseImageUrl;
-				$scope.BaseLinkUrl = response.data.BaseLinkUrl;
-				$scope.coins = response.data.Data;
-				delete $scope.coins["PIVX"];
-				for(key in $scope.coins){
-					$scope.coinlist.push($scope.coins[key]);
+		$scope.fetchCoinInfo = function(){
+			$http.get($scope.url).then(function(response){
+				if(response.data.Response=="Success"){
+					$scope.BaseImageUrl = response.data.BaseImageUrl;
+					$scope.BaseLinkUrl = response.data.BaseLinkUrl;
+					$scope.coins = response.data.Data;
+					delete $scope.coins["PIVX"];
+					for(key in $scope.coins){
+						$scope.coinlist.push($scope.coins[key]);
+					}
+					$scope.coinlist.sort(function(a, b) {
+					    return parseInt(a.SortOrder) - parseInt(b.SortOrder);
+					});				
+					
+					// $scope.coinlist = $scope.coinlist.slice(0,98);
 				}
-				$scope.coinlist.sort(function(a, b) {
-				    return parseInt(a.SortOrder) - parseInt(b.SortOrder);
-				});				
-				
-				// $scope.coinlist = $scope.coinlist.slice(0,98);
-			}
-			var keys = Object.keys($scope.cryptos);
-			$http.get('https://min-api.cryptocompare.com/data/pricemulti?fsyms=' + keys.join() + '&tsyms=USD,EUR').then(function(result){
-				$scope.prices = result.data;
-				$http.get("http://api.fixer.io/latest?base=USD").then(function(res){
-					$scope.conversion = res.data.rates;
-				})
-			})			
-		})		
+				var keys = Object.keys($scope.cryptos);
+				$http.get('https://min-api.cryptocompare.com/data/pricemulti?fsyms=' + keys.join() + '&tsyms=USD,EUR').then(function(result){
+					$scope.prices = result.data;
+					$http.get("http://api.fixer.io/latest?base=USD").then(function(res){
+						$scope.conversion = res.data.rates;
+					})
+				})			
+			})		
+		}
 	}
 
 	// Status - 200, 404, 500, 403, 301
